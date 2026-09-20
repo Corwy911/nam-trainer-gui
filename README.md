@@ -23,14 +23,15 @@ Windows PC — NVIDIA GPU, AMD GPU or just the CPU — and use it from that PC o
 
 ## Install (just to use it)
 
-1. From the **[Releases](../../releases)** page download **all** the `Installa NAM` files: `Installa NAM.exe` and the parts
-   `Installa NAM.dat.001`, `.002`, `.003` (GitHub does not accept files over 2 GiB, so the package is split).
-2. Put them **together in the same folder** — the one where you want NAM installed (a short, empty one, e.g. `C:\NAM`).
-3. Double-click `Installa NAM.exe`. It asks the language, detects the graphics card and installs the matching version,
+1. From the **[Releases](../../releases)** page download **all** the `Installa.NAM` files: `Installa.NAM.exe` and the parts
+   `Installa.NAM.dat.001`, `.002`, `.003` (GitHub does not accept files over 2 GiB, so the package is split).
+2. Put them **together in the same folder** — the one where you want NAM installed (a short, empty one, e.g. `C:\NAM`) — and keep
+   the names as they are (the exe finds its data by its own name).
+3. Double-click `Installa.NAM.exe`. It asks the language, detects the graphics card and installs the matching version,
    **without internet**. Windows may warn about an unknown publisher (the exe is not signed): *More info → Run anyway*.
 4. Double-click `Avvia NAM.bat` and open the page shown (`http://localhost:8765`).
 
-Check the downloads with `SHA256SUMS.txt` (release page); `"Installa NAM.exe" /verifica` checks every file's integrity.
+Check the downloads with `SHA256SUMS.txt` (release page); `Installa.NAM.exe /verifica` checks every file's integrity.
 Details, options and requirements: [installer/README.md](installer/README.md).
 
 **Requirements:** Windows 10/11 64-bit; NVIDIA RTX 20+ with driver 570+, *or* a supported Radeon on Windows 11 with the

@@ -7,14 +7,15 @@ Windows (GPU NVIDIA o AMD, o solo CPU), usabile dal PC stesso o da altri disposi
 
 ## Installazione (per chi vuole solo usarlo)
 
-1. Dalla pagina **Releases** del repository scarica **tutti** i file di `Installa NAM`: `Installa NAM.exe` e le parti
-   `Installa NAM.dat.001`, `.002`, `.003` (GitHub non accetta file oltre 2 GiB, quindi il pacchetto è diviso).
-2. Mettili **insieme, nella stessa cartella** (quella dove vuoi installare NAM, meglio corta e vuota, es. `C:\NAM`).
-3. Doppio clic su `Installa NAM.exe`: sceglie la lingua, riconosce da solo la scheda video (NVIDIA / AMD / nessuna) e installa
+1. Dalla pagina **Releases** del repository scarica **tutti** i file `Installa.NAM`: `Installa.NAM.exe` e le parti
+   `Installa.NAM.dat.001`, `.002`, `.003` (GitHub non accetta file oltre 2 GiB, quindi il pacchetto è diviso).
+2. Mettili **insieme, nella stessa cartella** (quella dove vuoi installare NAM, meglio corta e vuota, es. `C:\NAM`) e non cambiare
+   i nomi (l'exe trova i dati dal proprio nome).
+3. Doppio clic su `Installa.NAM.exe`: sceglie la lingua, riconosce da solo la scheda video (NVIDIA / AMD / nessuna) e installa
    la versione giusta, **senza internet**. Windows può avvisare che l'editore è sconosciuto (l'exe non è firmato).
 4. `Avvia NAM.bat` e apri la pagina indicata. Dettagli, requisiti e opzioni: [installer/README.it.md](installer/README.it.md).
 
-Verifica dei download: `SHA256SUMS.txt` nella release; `"Installa NAM.exe" /verifica` controlla l'integrità di tutti i file.
+Verifica dei download: `SHA256SUMS.txt` nella release; `Installa.NAM.exe /verifica` controlla l'integrità di tutti i file.
 
 ## Struttura del repository (per chi vuole modificarlo)
 

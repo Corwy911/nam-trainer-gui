@@ -3,6 +3,10 @@ NAM Trainer - installazione
 
 (English version of this guide: README-EN.txt.)
 
+Scaricati da GitHub i file hanno i punti al posto degli spazi: Installa.NAM.exe e Installa.NAM.dat.001, .002, .003
+(lì i dati sono divisi in parti). Dove questa guida dice "Installa NAM.exe" usa quel nome; tieni tutti i file insieme,
+con i nomi che hanno: l'exe trova i dati dal proprio nome.
+
 L'installatore sono DUE file che devono stare insieme nella stessa cartella:
    Installa NAM.exe   (il programmino che lanci)
    Installa NAM.dat   (il pacchetto, circa 5 GB: Python, PyTorch in tre versioni, pacchetti, trainer)

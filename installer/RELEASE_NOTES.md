@@ -4,10 +4,11 @@ First public release: a web GUI to train Neural Amp Modeler models on Windows wi
 
 ### Download and install
 
-Download **all** the `Installa NAM` files of this release — `Installa NAM.exe` and `Installa NAM.dat.001`, `.002`, `.003` — and put them
-**together in one empty, short folder** (e.g. `C:\NAM`). Double-click `Installa NAM.exe` (choose the language; Windows may warn that the
-publisher is unknown: *More info → Run anyway*), then `Avvia NAM.bat`. No internet is needed. Check the downloads with `SHA256SUMS.txt`;
-`"Installa NAM.exe" /verifica` checks every file. Guides: `README-EN.txt` (English), `LEGGIMI.txt` (Italiano).
+Download **all** the `Installa.NAM` files of this release — `Installa.NAM.exe` and `Installa.NAM.dat.001`, `.002`, `.003` — and put them
+**together in one empty, short folder** (e.g. `C:\NAM`; keep the names as they are: the exe finds its data by its own name).
+Double-click `Installa.NAM.exe` (choose the language; Windows may warn that the publisher is unknown: *More info → Run anyway*), then
+`Avvia NAM.bat`. No internet is needed. Check the downloads with `SHA256SUMS.txt` (`Get-FileHash <file>` in PowerShell);
+`Installa.NAM.exe /verifica` checks every file. Guides: `README-EN.txt` (English), `LEGGIMI.txt` (Italiano).
 
 ### What's in it
 
@@ -30,8 +31,8 @@ publisher is unknown: *More info → Run anyway*), then `Avvia NAM.bat`. No inte
 
 Prima versione pubblica: interfaccia web per addestrare modelli Neural Amp Modeler su Windows, con **installatore offline che riconosce l'hardware**.
 
-**Scarica TUTTI** i file `Installa NAM` di questa release (`Installa NAM.exe` e `Installa NAM.dat.001`, `.002`, `.003`) e mettili **insieme in
-una cartella vuota e corta** (es. `C:\NAM`). Doppio clic su `Installa NAM.exe` (scegli la lingua; se Windows avvisa che l'editore è
+**Scarica TUTTI** i file `Installa.NAM` di questa release (`Installa.NAM.exe` e `Installa.NAM.dat.001`, `.002`, `.003`) e mettili **insieme in
+una cartella vuota e corta** (es. `C:\NAM`, senza cambiare i nomi). Doppio clic su `Installa.NAM.exe` (scegli la lingua; se Windows avvisa che l'editore è
 sconosciuto: *Ulteriori informazioni → Esegui comunque*), poi `Avvia NAM.bat`. Non serve internet. Controlla i download con
 `SHA256SUMS.txt`.
 

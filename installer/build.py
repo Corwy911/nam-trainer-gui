@@ -317,6 +317,9 @@ def step_verify() -> None:
 
 
 PART_SIZE = 1_900_000_000   # GitHub caps a release file at 2 GiB (2_147_483_648 bytes)
+# GitHub turns the spaces of an uploaded file name into dots, so the release files are named that way from the start
+# (the exe finds its data by its own name: "Installa.NAM.exe" reads "Installa.NAM.dat.001", ...) and SHA256SUMS.txt matches.
+RELEASE_STEM = "Installa.NAM"
 RELEASE = HERE / "output" / "release"
 
 
@@ -333,17 +336,18 @@ def step_release() -> None:
     "Installa NAM.dat.001", ".002", ... straight from the same folder), the two guides and SHA256SUMS.txt."""
     if not OUTPUT.exists() or not OUTPUT_EXE.exists():
         raise SystemExit("prima serve il pacchetto: python build.py pack")
-    if RELEASE.exists():
-        shutil.rmtree(RELEASE)
-    RELEASE.mkdir(parents=True)
-    shutil.copy2(OUTPUT_EXE, RELEASE / OUTPUT_EXE.name)
+    RELEASE.mkdir(parents=True, exist_ok=True)
+    for old in RELEASE.iterdir():   # empty the folder, not the folder itself (a shell or Explorer may have it open)
+        if old.is_file():
+            old.unlink()
+    shutil.copy2(OUTPUT_EXE, RELEASE / f"{RELEASE_STEM}.exe")
     for guide in ("LEGGIMI.txt", "README-EN.txt"):
         shutil.copy2(HERE / "src" / guide, RELEASE / guide)
     size, index = OUTPUT.stat().st_size, 0
     with open(OUTPUT, "rb") as src:
         while src.tell() < size:
             index += 1
-            part = RELEASE / f"{OUTPUT.name}.{index:03d}"
+            part = RELEASE / f"{RELEASE_STEM}.dat.{index:03d}"
             left = PART_SIZE
             with open(part, "wb") as dst:
                 while left:

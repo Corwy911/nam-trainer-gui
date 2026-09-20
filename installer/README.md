@@ -13,6 +13,8 @@ it asks the language, **detects the hardware**, and installs the right version t
   `Installa.ps1`. Windows cannot run an `.exe` larger than 4 GiB, so the data is a separate file next to it.
 - `Installa NAM.dat` (~5.3 GB) — the package; or, from GitHub, its numbered parts (each under 2 GiB, the limit of a release
   file). The exe reads the parts straight from the same folder as if they were one file: **download them all, no joining needed**.
+  The data file is found by the exe's own name, so any consistent name works. GitHub turns spaces into dots, so the release files
+  are `Installa.NAM.exe` and `Installa.NAM.dat.001` … `.003` (`build.py release` names them that way and `SHA256SUMS.txt` matches).
 - `SHA256SUMS.txt`, `LEGGIMI.txt` (Italian) / `README-EN.txt` (English) — checksums and the end-user guide.
 
 ## What it does on the target PC

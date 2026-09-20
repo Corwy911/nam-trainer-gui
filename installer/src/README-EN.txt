@@ -3,6 +3,10 @@ NAM Trainer - installation
 
 (The Italian version of this guide is in LEGGIMI.txt.)
 
+Downloaded from GitHub the files are named with dots instead of spaces: Installa.NAM.exe and Installa.NAM.dat.001, .002, .003
+(the data comes in parts there). Wherever this guide says "Installa NAM.exe" use that name; keep all the files together,
+under the names they have: the exe finds its data by its own name.
+
 The installer is TWO files that must stay together in the same folder:
    Installa NAM.exe   (the small program you run)
    Installa NAM.dat   (the package, about 5 GB: Python, PyTorch in three versions, all packages, the trainers)
