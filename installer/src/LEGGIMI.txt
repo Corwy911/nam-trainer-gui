@@ -1,0 +1,66 @@
+NAM Trainer - installazione
+===========================
+
+(English version of this guide: README-EN.txt.)
+
+L'installatore sono DUE file che devono stare insieme nella stessa cartella:
+   Installa NAM.exe   (il programmino che lanci)
+   Installa NAM.dat   (il pacchetto, circa 5 GB: Python, PyTorch in tre versioni, pacchetti, trainer)
+
+1. Copia "Installa NAM.exe" e "Installa NAM.dat" nella cartella dove vuoi installare il programma
+   (es. C:\NAM oppure D:\Strumenti\NAM). Meglio una cartella corta e vuota.
+2. Fai doppio clic su "Installa NAM.exe".
+   - La prima domanda e la lingua dell'installatore: 1 = English, 2 = Italiano (Invio accetta quella
+     proposta, presa dalla lingua di Windows). La scelta decide anche la lingua con cui si apre la pagina web
+     la prima volta; dalla pagina si puo cambiare quando vuoi.
+   - Poi rispondi S alla domanda di conferma.
+   - Windows potrebbe avvisare che l'editore e sconosciuto (il programma non e firmato):
+     "Ulteriori informazioni" -> "Esegui comunque".
+   - Il programma riconosce da solo l'hardware del PC e installa la versione giusta:
+       * scheda NVIDIA          -> PyTorch CUDA (la versione piu veloce e collaudata)
+       * scheda AMD Radeon      -> PyTorch ROCm, l'accelerazione ufficiale AMD per Windows (vedi sotto)
+       * nessuna delle due      -> PyTorch solo CPU (funziona, ma il training e molto piu lento)
+     Prima di copiare i file mostra cosa ha trovato e cosa installera; se non e quello che vuoi
+     puoi scegliere a mano la versione (1 = NVIDIA, 2 = AMD, 3 = solo CPU).
+   - Servono circa 10-15 GB di spazio libero durante l'installazione (dipende dalla versione:
+     lo dice il programma); a fine lavoro ne restano occupati da 3 a 8 GB (piu il file di installazione).
+   - Non serve internet: Python, PyTorch (tutte e tre le versioni) e i pacchetti sono nel file.
+   - Se manca il runtime Visual C++ (raro), Windows chiede una volta il permesso di amministratore.
+3. Al termine: doppio clic su "Avvia NAM.bat" e apri la pagina indicata.
+
+Requisiti del PC
+   - Windows 10/11 a 64 bit.
+   - NVIDIA: GPU RTX serie 20 o successive (anche serie 50) con driver NVIDIA recente (570 o superiore).
+   - AMD: Windows 11, driver Adrenalin 26.2.2 o successivo e una Radeon supportata da AMD per PyTorch:
+     RX 9000 (9060 XT, 9070, 9070 XT), RX 7700/7800/7900, Radeon PRO W7700/W7800/W7900, Radeon AI PRO R9700,
+     Ryzen AI (Radeon 8050S/8060S/890M/880M). E un'anteprima di AMD: se la GPU non e utilizzabile
+     l'installazione ripiega da sola sulla versione CPU. Per l'AMD la cartella deve avere un percorso
+     corto (massimo 76 caratteri, es. C:\NAM).
+   - Nessuna GPU utilizzabile: si installa la versione CPU. La pagina mostra un avviso e riduce i valori
+     predefiniti (meno epoche): un modello completo puo richiedere ore.
+
+Nella pagina web
+   - In alto a destra: la lingua (Italiano / English) e l'interruttore LAN:
+       LAN attiva     = la pagina e usabile anche da altri PC della rete (indirizzi mostrati sotto);
+       LAN disattivata = solo dal PC dove NAM e installato (http://localhost:8765), come un'app.
+     Disattivandola da un altro PC si perde l'accesso da li: riattivarla si puo solo dal PC di NAM.
+
+Verificare che il file di installazione non sia danneggiato (dopo averlo copiato):
+   "Installa NAM.exe" /verifica
+Vedere cosa riconosce e installerebbe, senza installare nulla:
+   "Installa NAM.exe" /rileva
+Scegliere la versione a mano (nvidia, amd o cpu), saltando il rilevamento:
+   "Installa NAM.exe" /VARIANTE=cpu
+Scegliere la lingua senza che venga chiesta (en o it), per esempio per un'installazione automatica:
+   "Installa NAM.exe" /S /LANG=it
+
+Reinstallare / aggiornare: rilancia "Installa NAM.exe" nella stessa cartella (anche per cambiare scheda video:
+si rifa il rilevamento). Modelli (NAM Generati), WAV (File WAV caricati), Backup, trainer aggiornati e
+impostazioni della pagina (LAN) restano intatti.
+
+Disinstallare: chiudi NAM (Ferma NAM.bat) ed elimina la cartella. Non viene modificato nulla nel resto del PC
+(tranne, se mancava, il runtime Visual C++ di Microsoft).
+
+Firewall: la prima volta che il server parte Windows chiede di consentire Python sulla rete privata. Accetta per usare
+la pagina da un altro dispositivo della LAN (es. dal Mac). L'interruttore LAN della pagina non cambia le regole
+del firewall: limita l'accesso dentro NAM stesso.
